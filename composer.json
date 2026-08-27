@@ -1,0 +1,36 @@
+{
+	"name": "play-seats/play-seats",
+	"description": "Displays remaining seats for a play.",
+	"license": "GPL-2.0-or-later",
+	"type": "wordpress-plugin",
+	"require": {
+		"php": "^8.1"
+	},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "*",
+		"phpcompatibility/php-compatibility": "*",
+		"phpcompatibility/phpcompatibility-wp": "*",
+		"phpstan/phpstan": "^2",
+		"squizlabs/php_codesniffer": "^3",
+		"szepeviktor/phpstan-wordpress": "^2",
+		"wp-coding-standards/wpcs": "^3",
+		"yoast/wp-test-utils": "^1.2"
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"autoload": {
+		"psr-4": {
+			"PlaySeats\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"PlaySeats\\Tests\\": "tests/phpunit/"
+		}
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
+}

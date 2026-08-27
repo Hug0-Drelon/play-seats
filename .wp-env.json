@@ -1,0 +1,13 @@
+{
+	"phpVersion": "8.2",
+	"plugins": [ "." ],
+	"themes": [ "./theme/play-seats-demo" ],
+	"config": {
+		"WP_DEBUG": true,
+		"SCRIPT_DEBUG": true,
+		"WP_DEBUG_LOG": true
+	},
+	"lifecycleScripts": {
+		"afterStart": "wp-env run cli wp theme activate play-seats-demo"
+	}
+}

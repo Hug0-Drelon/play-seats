@@ -1,0 +1,45 @@
+/*
+Theme Name: Play Seats Demo
+Template: twentytwentyfive
+Author: Play Seats
+Description: Twenty Twenty-Five child theme for the Play Seats demonstration.
+Version: 1.0.0
+Requires at least: 6.8
+Requires PHP: 8.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: play-seats
+*/
+
+.site-header--desktop {
+	display: block;
+}
+
+.site-header--mobile {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	.site-header--desktop {
+		display: none;
+	}
+
+	.site-header--mobile {
+		display: block;
+	}
+}
+
+.play-seats-badge {
+	display: inline-flex;
+	gap: 0.35rem;
+	align-items: baseline;
+	padding: 0.5rem 1rem;
+	color: var(--wp--preset--color--contrast);
+	background: var(--wp--preset--color--base);
+	border: 1px solid currentcolor;
+	border-radius: 999px;
+}
+
+.play-seats-badge__count {
+	font-weight: 700;
+}

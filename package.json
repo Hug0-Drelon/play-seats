@@ -1,0 +1,31 @@
+{
+	"name": "play-seats",
+	"version": "1.0.0",
+	"description": "Displays remaining seats for a play.",
+	"author": "Play Seats",
+	"license": "GPL-2.0-or-later",
+	"private": true,
+	"scripts": {
+		"build": "wp-scripts build",
+		"start": "wp-scripts start",
+		"env:start": "wp-env start",
+		"env:stop": "wp-env stop",
+		"env:composer": "wp-env run tests-cli --env-cwd=wp-content/plugins/play-seats composer",
+		"test:php": "wp-env run tests-cli --env-cwd=wp-content/plugins/play-seats vendor/bin/phpunit",
+		"test:e2e": "playwright test --config tests/e2e/playwright.config.js",
+		"lint:js": "eslint",
+		"lint:php": "wp-env run tests-cli --env-cwd=wp-content/plugins/play-seats bash -c 'vendor/bin/phpcs && vendor/bin/phpstan analyze --memory-limit=1G'"
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.62.1",
+		"@wordpress/env": "^11.14.0",
+		"@wordpress/eslint-plugin": "^25.10.0",
+		"@wordpress/scripts": "^34.2.0",
+		"eslint": "^9.39.5"
+	},
+	"dependencies": {
+		"@wordpress/block-editor": "^17.0.0",
+		"@wordpress/blocks": "^15.27.0",
+		"@wordpress/i18n": "^6.27.0"
+	}
+}

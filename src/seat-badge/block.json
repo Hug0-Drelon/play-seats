@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "play-seats/seat-badge",
+  "version": "1.0.0",
+  "title": "Play Seats Badge",
+  "category": "widgets",
+  "icon": "tickets-alt",
+  "description": "Displays the remaining seats for the keynote.",
+  "textdomain": "play-seats",
+  "supports": {
+    "html": false
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}
