@@ -39,4 +39,4 @@ GitHub Actions runs ESLint, PHPCS, PHPStan, and PHPUnit on every push and pull r
 
 ## License
 
-GPL-2.0-or-later
+MIT

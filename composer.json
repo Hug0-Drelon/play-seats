@@ -1,7 +1,7 @@
 {
 	"name": "play-seats/play-seats",
 	"description": "Displays remaining seats for a play.",
-	"license": "GPL-2.0-or-later",
+	"license": "MIT",
 	"type": "wordpress-plugin",
 	"require": {
 		"php": "^8.1"

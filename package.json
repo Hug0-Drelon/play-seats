@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "Displays remaining seats for a play.",
 	"author": "Play Seats",
-	"license": "GPL-2.0-or-later",
+	"license": "MIT",
 	"private": true,
 	"scripts": {
 		"build": "wp-scripts build",
