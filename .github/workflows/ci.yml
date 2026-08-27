@@ -22,19 +22,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with:
-          node-version: '24'
-          cache: npm
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.4'
-          tools: composer
           coverage: none
-      - run: npm ci
-      - run: npm run env:start
-      - run: npm run env:composer -- install --no-interaction --prefer-dist
-      - run: npm run lint:php
+      - uses: ramsey/composer-install@v4
+      - run: vendor/bin/phpcs
+      - run: vendor/bin/phpstan analyze --memory-limit=1G
 
   phpunit:
     name: PHPUnit
