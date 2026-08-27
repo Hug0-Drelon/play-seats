@@ -1,5 +1,5 @@
 {
-	"phpVersion": "8.2",
+	"phpVersion": "8.4",
 	"plugins": [ "." ],
 	"themes": [ "./theme/play-seats-demo" ],
 	"config": {

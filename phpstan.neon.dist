@@ -1,6 +1,7 @@
 includes:
 	- vendor/szepeviktor/phpstan-wordpress/extension.neon
 parameters:
+	phpVersion: 80400
 	level: 9
 	paths:
 		- play-seats.php

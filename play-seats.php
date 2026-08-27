@@ -4,7 +4,7 @@
  * Description:       Displays remaining seats for a play.
  * Version:           1.0.0
  * Requires at least: 6.8
- * Requires PHP:      8.1
+ * Requires PHP:      8.4
  * Author:            Play Seats
  * License:           MIT
  * License URI:       https://opensource.org/licenses/MIT

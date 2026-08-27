@@ -4,7 +4,8 @@ WordPress plugin that provides a dynamic Gutenberg block displaying the remainin
 
 ## Requirements
 
-- Node.js 20+
+- Node.js 24+
+- PHP 8.4
 - Docker (for [`@wordpress/env`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/))
 - Composer (installed automatically inside the wp-env tests container)
 
