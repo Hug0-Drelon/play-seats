@@ -28,8 +28,10 @@
 		"@playwright/test": "^1.62.1",
 		"@wordpress/env": "^11.14.0",
 		"@wordpress/eslint-plugin": "^25.10.0",
+		"@wordpress/prettier-config": "^4.54.0",
 		"@wordpress/scripts": "^34.2.0",
-		"eslint": "^10.9.1"
+		"eslint": "^10.9.1",
+		"prettier": "npm:wp-prettier@^3.0.3"
 	},
 	"dependencies": {
 		"@wordpress/block-editor": "^17.0.0",

@@ -1,4 +1,4 @@
-const wpPlugin = require('@wordpress/eslint-plugin');
+const wpPlugin = require( '@wordpress/eslint-plugin' );
 
 module.exports = [
 	{
@@ -14,5 +14,4 @@ module.exports = [
 		],
 	},
 	...wpPlugin.configs.recommended,
-	...wpPlugin.configs.i18n,
 ];
