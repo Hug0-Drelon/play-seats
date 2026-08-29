@@ -14,21 +14,19 @@ use WP_REST_Server;
 
 /**
  * Public GET endpoint returning remaining and total seats.
+ *
+ * DEMO: REST API for seat availability:
+ *   GET /wp-json/play/v1/seats
+ *   → { "remaining": 42, "total": 100 }
  */
 class SeatsController extends WP_REST_Controller {
 
 	/**
-	 * Route base (not the core `$rest_base` property).
-	 *
-	 * @var string
-	 */
-	protected $restBase = 'seats';
-
-	/**
-	 * Sets the REST namespace.
+	 * Sets the REST namespace and route base.
 	 */
 	public function __construct() {
 		$this->namespace = 'play/v1';
+		$this->rest_base = 'seats'; // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps -- WP_REST_Controller property.
 	}
 
 	/**
@@ -38,8 +36,8 @@ class SeatsController extends WP_REST_Controller {
 	 */
 	public function register_routes() { // phpcs:ignore Generic.NamingConventions.CamelCapsFunctionName
 		register_rest_route(
-			'play/v1',
-			'/' . $this->restBase,
+			$this->namespace,
+			'/' . $this->rest_base, // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps -- WP_REST_Controller property.
 			array(
 				array(
 					'methods'             => WP_REST_Server::READABLE,
@@ -59,6 +57,7 @@ class SeatsController extends WP_REST_Controller {
 	public function getItems( WP_REST_Request $request ): WP_REST_Response {
 		unset( $request );
 
+		// DEMO: Mock seat inventory, swap for a real data source in production.
 		return rest_ensure_response(
 			array(
 				'remaining' => 42,

@@ -2,6 +2,8 @@
 /**
  * Play Seats demo theme setup.
  *
+ * DEMO: Twenty Twenty-Five child theme — embeds the seat badge in the site header.
+ *
  * @package PlaySeats
  */
 

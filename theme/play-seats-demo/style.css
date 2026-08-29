@@ -29,6 +29,7 @@ Text Domain: play-seats
 	}
 }
 
+/* DEMO: Badge styling — visible in the header on desktop and mobile. */
 .play-seats-badge {
 	display: inline-flex;
 	gap: 0.35rem;

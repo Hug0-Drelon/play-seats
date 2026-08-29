@@ -12,6 +12,8 @@ use WP_UnitTestCase;
 
 /**
  * Verifies the public seats route contract.
+ *
+ * DEMO: Automated check that the REST endpoint matches the demo payload.
  */
 class SeatsControllerTest extends WP_UnitTestCase {
 
@@ -26,6 +28,7 @@ class SeatsControllerTest extends WP_UnitTestCase {
 	}
 
 	public function testSeatsEndpointReturnsRemainingSeats() {
+		// DEMO: Contract test; verifies GET /play/v1/seats returns { remaining, total }.
 		$request  = new WP_REST_Request( 'GET', '/play/v1/seats' );
 		$response = rest_get_server()->dispatch( $request );
 

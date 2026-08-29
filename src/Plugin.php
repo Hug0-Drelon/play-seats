@@ -11,6 +11,9 @@ use PlaySeats\Rest\SeatsController;
 
 /**
  * Registers REST routes and the seat badge block.
+ *
+ * DEMO: Architecture overview:
+ *   REST API (SeatsController) ← view.js fetch ← seat badge block (render.php)
  */
 class Plugin {
 
@@ -20,6 +23,7 @@ class Plugin {
 	 * @return void
 	 */
 	public function register(): void {
+		// DEMO: Two integration points, a REST API and a dynamic Gutenberg block.
 		add_action( 'rest_api_init', array( $this, 'registerRestRoutes' ) );
 		add_action( 'init', array( $this, 'registerBlock' ) );
 	}
@@ -46,6 +50,7 @@ class Plugin {
 			return;
 		}
 
+		// DEMO: Block metadata lives in block.json; compiled assets in build/seat-badge/.
 		register_block_type( $blockPath );
 
 		$route = wp_json_encode( rest_url( 'play/v1/seats' ) );
@@ -54,6 +59,7 @@ class Plugin {
 			return;
 		}
 
+		// DEMO: Pass the REST URL to view.js so the front end can hydrate the badge.
 		wp_add_inline_script(
 			'play-seats-seat-badge-view-script',
 			'window.playSeatsRoute = ' . $route . ';',

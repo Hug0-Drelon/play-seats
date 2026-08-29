@@ -7,6 +7,7 @@
   "category": "widgets",
   "icon": "tickets-alt",
   "description": "Displays the remaining seats for the keynote.",
+  "keywords": ["seats", "badge", "rest-api"],
   "textdomain": "play-seats",
   "supports": {
     "html": false
