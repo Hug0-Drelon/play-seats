@@ -31,7 +31,7 @@ runs:
 
     - name: Cache wp-env home
       id: wp-env-home-cache
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: ${{ env.WP_ENV_HOME }}
         key: ${{ runner.os }}-wp-env-home-${{ steps.wp-env-version.outputs.WP_ENV_VERSION }}-${{ env.WP_VERSION }}-${{ hashFiles(inputs.wp-env-config) }}-${{ inputs.wp-env-cache-key }}
