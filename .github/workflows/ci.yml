@@ -10,11 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with:
-          node-version: '24'
-          cache: npm
-      - run: npm ci
+      - uses: ./.github/actions/cache-node-modules
       - run: npm run lint:js
 
   lint-php:
@@ -35,11 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with:
-          node-version: '24'
-          cache: npm
-      - run: npm ci
+      - uses: ./.github/actions/cache-node-modules
       - run: npm run build
       - uses: ./.github/actions/cache-wp-env
         with:
