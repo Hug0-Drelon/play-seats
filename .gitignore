@@ -3,6 +3,7 @@
 /build/
 /.wp-env/
 /.wp-env.override.json
+/.wp-env.test.override.json
 /playwright-report/
 /test-results/
 /.phpunit.result.cache

@@ -7,7 +7,7 @@ WordPress plugin that provides a dynamic Gutenberg block displaying the remainin
 - Node.js 24+
 - PHP 8.4
 - Docker (for [`@wordpress/env`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/))
-- Composer (installed automatically inside the wp-env tests container)
+- Composer (installed automatically inside the wp-env development container)
 
 ## Setup
 
@@ -26,9 +26,14 @@ The development site is available at [http://localhost:8888](http://localhost:88
 | --- | --- |
 | `npm run build` | Compile front-end assets with `@wordpress/scripts` |
 | `npm run start` | Watch mode for assets |
-| `npm run env:start` | Start wp-env |
-| `npm run env:stop` | Stop wp-env |
-| `npm run env:composer -- <args>` | Run Composer in the plugin directory inside wp-env |
+| `npm run env:start` | Start the development wp-env (port 8888) |
+| `npm run env:stop` | Stop the development wp-env |
+| `npm run env:test:start` | Start the test wp-env (port 8889) |
+| `npm run env:test:stop` | Stop the test wp-env |
+| `npm run env:start:all` | Start both development and test environments |
+| `npm run env:stop:all` | Stop both development and test environments |
+| `npm run env:composer -- <args>` | Run Composer in the plugin directory inside the development wp-env |
+| `npm run env:test:composer -- <args>` | Run Composer in the plugin directory inside the test wp-env |
 | `npm run lint:js` | ESLint |
 | `npm run lint:php` | PHPCS and PHPStan (requires a running environment) |
 | `npm run test:php` | PHPUnit integration tests (requires a running environment) |
