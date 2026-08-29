@@ -41,6 +41,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      - uses: ./.github/actions/cache-wp-env
+        with:
+          wp-env-config: .wp-env.test.json
+          wp-env-cache-key: test
       - run: npm run env:test:start
       - run: npm run env:test:composer -- install --no-interaction --prefer-dist
       - run: npm run test:php

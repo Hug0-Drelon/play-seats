@@ -1,0 +1,42 @@
+name: Cache wp-env home
+
+description: Cache the wp-env home directory to speed up WordPress environment startup in CI.
+
+inputs:
+  wp-env-config:
+    description: Path to the wp-env config file (e.g. .wp-env.json or .wp-env.test.json).
+    required: false
+    default: .wp-env.json
+  wp-env-cache-key:
+    description: Extra cache key fragment for inputs not reflected in the wp-env config file.
+    required: false
+    default: default
+
+runs:
+  using: composite
+
+  steps:
+    - name: Set wp-env home directory
+      run: echo "WP_ENV_HOME=${HOME}/.wp-env" >> "$GITHUB_ENV"
+      shell: bash
+
+    - name: Get @wordpress/env version
+      id: wp-env-version
+      run: echo "WP_ENV_VERSION=$(node -e "console.log(require('@wordpress/env/package.json').version)")" >> "$GITHUB_OUTPUT"
+      shell: bash
+
+    - name: Get WordPress latest version
+      run: echo "WP_VERSION=$(node -e "fetch('https://api.wordpress.org/core/version-check/1.7/').then(r => r.json()).then(data => console.log(data.offers[0].current))")" >> "$GITHUB_ENV"
+      shell: bash
+
+    - name: Cache wp-env home
+      id: wp-env-home-cache
+      uses: actions/cache@v4
+      with:
+        path: ${{ env.WP_ENV_HOME }}
+        key: ${{ runner.os }}-wp-env-home-${{ steps.wp-env-version.outputs.WP_ENV_VERSION }}-${{ env.WP_VERSION }}-${{ hashFiles(inputs.wp-env-config) }}-${{ inputs.wp-env-cache-key }}
+
+    - name: Force wp-env reconfigure after home cache restore
+      if: steps.wp-env-home-cache.outputs.cache-hit == 'true'
+      run: find "${WP_ENV_HOME}" -name 'wp-env-cache.json' -delete
+      shell: bash
