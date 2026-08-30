@@ -1,0 +1,18 @@
+/* DEMO: Mirror frontend header visibility in the Site Editor canvas. */
+.wp-block-group.site-header--desktop {
+	display: block;
+}
+
+.wp-block-group.site-header--mobile {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	.wp-block-group.site-header--desktop {
+		display: none;
+	}
+
+	.wp-block-group.site-header--mobile {
+		display: block;
+	}
+}
