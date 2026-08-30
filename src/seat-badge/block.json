@@ -10,7 +10,8 @@
   "keywords": ["seats", "badge", "rest-api"],
   "textdomain": "play-seats",
   "supports": {
-    "html": false
+    "html": false,
+    "contentRole": true
   },
   "editorScript": "file:./index.js",
   "viewScript": "file:./view.js",

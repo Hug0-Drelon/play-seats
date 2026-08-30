@@ -1,3 +1,4 @@
+import { addFilter } from '@wordpress/hooks';
 import { registerBlockType } from '@wordpress/blocks';
 
 import Edit from './edit';
@@ -8,3 +9,21 @@ registerBlockType( metadata.name, {
 	edit: Edit,
 	save: () => null,
 } );
+
+addFilter(
+	'blocks.registerBlockType',
+	'play-seats/seat-badge-add-to-navigation',
+	( settings, name ) => {
+		if ( name !== 'core/navigation' ) {
+			return settings;
+		}
+
+		return {
+			...settings,
+			allowedBlocks: [
+				...( settings.allowedBlocks ?? [] ),
+				metadata.name,
+			],
+		};
+	}
+);

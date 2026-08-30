@@ -36,6 +36,7 @@
 	"dependencies": {
 		"@wordpress/block-editor": "^17.0.0",
 		"@wordpress/blocks": "^15.27.0",
+		"@wordpress/hooks": "^4.54.0",
 		"@wordpress/i18n": "^6.27.0"
 	}
 }
