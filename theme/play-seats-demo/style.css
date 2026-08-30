@@ -32,15 +32,3 @@ Text Domain: play-seats
 		display: block;
 	}
 }
-
-/* DEMO: Badge styling — visible in the header on desktop and mobile. */
-.play-seats-badge {
-	display: inline-flex;
-	gap: 0.35rem;
-	align-items: center;
-	padding: 0.5rem 1rem;
-	color: var(--wp--preset--color--contrast);
-	background: var(--wp--preset--color--base);
-	border: 1px solid currentcolor;
-	border-radius: 999px;
-}

@@ -1,5 +1,3 @@
-import './style.css';
-
 /**
  * DEMO: Client-side hydration:
  *   1. Read REST URL injected by Plugin.php (window.playSeatsRoute)
