@@ -14,4 +14,16 @@ module.exports = [
 		],
 	},
 	...wpPlugin.configs.recommended,
+	{
+		rules: {
+			// @wordpress/* packages are editor runtime externals (window.wp.*).
+			// List them in peerDependencies so import/no-extraneous-dependencies allows them.
+			'import/no-unresolved': [
+				'error',
+				{
+					ignore: [ '^@wordpress/' ],
+				},
+			],
+		},
+	},
 ];

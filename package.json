@@ -10,7 +10,9 @@
 	},
 	"scripts": {
 		"build": "wp-scripts build",
+		"build:dev": "wp-scripts build --mode=development",
 		"start": "wp-scripts start",
+		"watch": "wp-scripts start",
 		"env:start": "wp-env start",
 		"env:stop": "wp-env stop",
 		"env:start:all": "npm run env:start && npm run env:test:start",
@@ -26,17 +28,40 @@
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.62.1",
+		"@wordpress/block-editor": "^17.0.0",
+		"@wordpress/blocks": "^15.27.0",
+		"@wordpress/element": "^6.27.0",
 		"@wordpress/env": "^11.14.0",
 		"@wordpress/eslint-plugin": "^25.10.0",
+		"@wordpress/hooks": "^4.54.0",
+		"@wordpress/i18n": "^6.27.0",
 		"@wordpress/prettier-config": "^4.54.0",
 		"@wordpress/scripts": "^34.2.0",
 		"eslint": "^10.9.1",
 		"prettier": "npm:wp-prettier@^3.0.3"
 	},
-	"dependencies": {
+	"peerDependencies": {
 		"@wordpress/block-editor": "^17.0.0",
-		"@wordpress/blocks": "^15.27.0",
-		"@wordpress/hooks": "^4.54.0",
-		"@wordpress/i18n": "^6.27.0"
+		"@wordpress/blocks": "^15.0.0",
+		"@wordpress/element": "^6.0.0",
+		"@wordpress/hooks": "^4.0.0",
+		"@wordpress/i18n": "^6.0.0"
+	},
+	"peerDependenciesMeta": {
+		"@wordpress/block-editor": {
+			"optional": true
+		},
+		"@wordpress/blocks": {
+			"optional": true
+		},
+		"@wordpress/element": {
+			"optional": true
+		},
+		"@wordpress/hooks": {
+			"optional": true
+		},
+		"@wordpress/i18n": {
+			"optional": true
+		}
 	}
 }
