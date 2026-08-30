@@ -37,14 +37,10 @@ Text Domain: play-seats
 .play-seats-badge {
 	display: inline-flex;
 	gap: 0.35rem;
-	align-items: baseline;
+	align-items: center;
 	padding: 0.5rem 1rem;
 	color: var(--wp--preset--color--contrast);
 	background: var(--wp--preset--color--base);
 	border: 1px solid currentcolor;
 	border-radius: 999px;
-}
-
-.play-seats-badge__count {
-	font-weight: 700;
 }

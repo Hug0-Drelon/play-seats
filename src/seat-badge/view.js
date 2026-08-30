@@ -1,8 +1,10 @@
+import './style.css';
+
 /**
  * DEMO: Client-side hydration:
  *   1. Read REST URL injected by Plugin.php (window.playSeatsRoute)
  *   2. Fetch GET /wp-json/play/v1/seats
- *   3. Replace "Loading…" with data.remaining
+ *   3. Replace the spinner with data.remaining
  */
 const restUrl = window.playSeatsRoute;
 const badge = document.querySelector( '.play-seats-badge' );
@@ -18,9 +20,11 @@ if ( restUrl && countEl ) {
 			return response.json();
 		} )
 		.then( ( data ) => {
+			countEl.removeAttribute( 'aria-busy' );
 			countEl.textContent = String( data.remaining );
 		} )
 		.catch( () => {
+			countEl.removeAttribute( 'aria-busy' );
 			countEl.textContent = '—';
 		} );
 }
