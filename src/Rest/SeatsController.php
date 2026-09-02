@@ -7,7 +7,6 @@
 
 namespace PlaySeats\Rest;
 
-use WP_REST_Controller;
 use WP_REST_Request;
 use WP_REST_Response;
 use WP_REST_Server;
@@ -19,30 +18,17 @@ use WP_REST_Server;
  *   GET /wp-json/play/v1/seats
  *   → { "remaining": 42, "total": 100 }
  */
-class SeatsController extends WP_REST_Controller {
-
-	/**
-	 * REST API namespace.
-	 */
-	private const ROUTE_NAMESPACE = 'play/v1';
-
-	/**
-	 * Sets the REST namespace and route base.
-	 */
-	public function __construct() {
-		$this->namespace = self::ROUTE_NAMESPACE;
-		$this->rest_base = 'seats'; // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps -- WP_REST_Controller property.
-	}
+class SeatsController {
 
 	/**
 	 * Registers the collection route.
 	 *
 	 * @return void
 	 */
-	public function register_routes() { // phpcs:ignore Generic.NamingConventions.CamelCapsFunctionName
+	public function registerRoute(): void {
 		register_rest_route(
-			self::ROUTE_NAMESPACE,
-			'/' . $this->rest_base, // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps -- WP_REST_Controller property.
+			'play/v1',
+			'/seats',
 			[
 				[
 					'methods'             => WP_REST_Server::READABLE,

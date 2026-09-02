@@ -35,7 +35,7 @@ class Plugin {
 	 */
 	public function registerRestRoutes(): void {
 		$controller = new SeatsController();
-		$controller->register_routes();
+		$controller->registerRoute();
 	}
 
 	/**
