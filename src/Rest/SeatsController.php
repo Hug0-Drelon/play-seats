@@ -43,13 +43,13 @@ class SeatsController extends WP_REST_Controller {
 		register_rest_route(
 			self::ROUTE_NAMESPACE,
 			'/' . $this->rest_base, // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps -- WP_REST_Controller property.
-			array(
-				array(
+			[
+				[
 					'methods'             => WP_REST_Server::READABLE,
-					'callback'            => array( $this, 'getItems' ),
+					'callback'            => [ $this, 'getItems' ],
 					'permission_callback' => '__return_true',
-				),
-			)
+				],
+			]
 		);
 	}
 
@@ -64,10 +64,10 @@ class SeatsController extends WP_REST_Controller {
 
 		// DEMO: Mock seat inventory, swap for a real data source in production.
 		return rest_ensure_response(
-			array(
+			[
 				'remaining' => 42,
 				'total'     => 100,
-			)
+			]
 		);
 	}
 }

@@ -24,8 +24,8 @@ class Plugin {
 	 */
 	public function register(): void {
 		// DEMO: Two integration points, a REST API and a dynamic Gutenberg block.
-		add_action( 'rest_api_init', array( $this, 'registerRestRoutes' ) );
-		add_action( 'init', array( $this, 'registerBlock' ) );
+		add_action( 'rest_api_init', [ $this, 'registerRestRoutes' ] );
+		add_action( 'init', [ $this, 'registerBlock' ] );
 	}
 
 	/**

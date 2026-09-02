@@ -23,6 +23,7 @@
 	</rule>
 	<rule ref="WordPress-Docs"/>
 
+	<rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
 	<rule ref="Generic.NamingConventions.CamelCapsFunctionName"/>
 	<rule ref="Squiz.NamingConventions.ValidVariableName"/>
 

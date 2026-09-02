@@ -31,7 +31,7 @@ function playSeatsDemoEnqueueEditorStyles(): void {
 	wp_enqueue_style(
 		'play-seats-demo-editor',
 		get_stylesheet_directory_uri() . '/editor.css',
-		array(),
+		[],
 		is_string( $version ) ? $version : '1.0.0'
 	);
 }
@@ -49,7 +49,7 @@ function playSeatsDemoEnqueueStyles(): void {
 	wp_enqueue_style(
 		'play-seats-demo',
 		get_stylesheet_uri(),
-		array(),
+		[],
 		is_string( $version ) ? $version : '1.0.0'
 	);
 }

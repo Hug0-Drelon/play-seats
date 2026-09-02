@@ -34,10 +34,10 @@ class SeatsControllerTest extends WP_UnitTestCase {
 
 		$this->assertSame( 200, $response->get_status() );
 		$this->assertSame(
-			array(
+			[
 				'remaining' => 42,
 				'total'     => 100,
-			),
+			],
 			$response->get_data()
 		);
 	}
