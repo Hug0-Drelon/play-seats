@@ -9,6 +9,7 @@ export default defineConfig( {
 	use: {
 		baseURL: 'http://localhost:8889',
 		trace: 'on-first-retry',
+		storageState: 'artifacts/storage-states/admin.json',
 	},
 
 	// 2. Les deux scènes de test : Desktop et Mobile

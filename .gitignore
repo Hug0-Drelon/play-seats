@@ -6,6 +6,7 @@
 /.wp-env.test.override.json
 /playwright-report/
 /test-results/
+/artifacts/
 /.phpunit.result.cache
 /.phpcs.cache
 /coverage/
