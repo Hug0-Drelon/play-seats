@@ -19,7 +19,7 @@ if ( restUrl && countEl ) {
 		} )
 		.then( ( data ) => {
 			countEl.removeAttribute( 'aria-busy' );
-			countEl.textContent = String( data.remaining );
+			countEl.textContent = `${ data.remaining } places restantes`;
 		} )
 		.catch( () => {
 			countEl.removeAttribute( 'aria-busy' );

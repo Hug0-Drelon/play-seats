@@ -10,7 +10,7 @@ module.exports = [
 			'playwright-report/**',
 			'test-results/**',
 			'webpack.config.js',
-			'tests/e2e/playwright.config.js',
+			'playwright.config.mjs',
 		],
 	},
 	...wpPlugin.configs.recommended,
