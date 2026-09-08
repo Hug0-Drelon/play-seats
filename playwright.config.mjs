@@ -4,7 +4,7 @@ export default defineConfig( {
 	testDir: './tests/e2e',
 
 	// 1. Initialiser WordPress & activer le plugin Play Seats
-	globalSetup: './tests/e2e/global.setup.mjs',
+	globalSetup: './tests/e2e/global.setup.js',
 
 	use: {
 		baseURL: 'http://localhost:8889',

@@ -26,4 +26,17 @@ module.exports = [
 			],
 		},
 	},
+	{
+		files: [ 'tests/e2e/**/*.js' ],
+		rules: {
+			// tests/e2e/package.json scopes ESM; resolve deps from the project root.
+			'import/no-extraneous-dependencies': [
+				'error',
+				{
+					devDependencies: true,
+					packageDir: __dirname,
+				},
+			],
+		},
+	},
 ];
