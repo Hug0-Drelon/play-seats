@@ -6,6 +6,6 @@ test( 'Affiche le nombre de places restantes', async ( { page } ) => {
 
 	// 2. Vérifier le décompte affiché après l'appel API REST
 	await expect(
-		page.getByText( '42 places restantes' ).filter( { visible: true } )
-	).toBeVisible();
+		page.getByRole( 'status', { name: 'Remaining seats' } )
+	).toHaveText( '42 places restantes' );
 } );

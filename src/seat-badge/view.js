@@ -5,10 +5,19 @@
  *   3. Replace the spinner with data.remaining
  */
 const restUrl = window.playSeatsRoute;
-const badge = document.querySelector( '.play-seats-badge' );
-const countEl = badge?.querySelector( '.play-seats-badge__count' );
+const badges = document.querySelectorAll( '.play-seats-badge' );
 
-if ( restUrl && countEl ) {
+function updateBadges( text ) {
+	badges.forEach( ( badge ) => {
+		badge.removeAttribute( 'aria-busy' );
+		const countEl = badge.querySelector( '.play-seats-badge__count' );
+		if ( countEl ) {
+			countEl.textContent = text;
+		}
+	} );
+}
+
+if ( restUrl && badges.length ) {
 	fetch( restUrl )
 		.then( ( response ) => {
 			if ( ! response.ok ) {
@@ -18,11 +27,9 @@ if ( restUrl && countEl ) {
 			return response.json();
 		} )
 		.then( ( data ) => {
-			countEl.removeAttribute( 'aria-busy' );
-			countEl.textContent = `${ data.remaining } places restantes`;
+			updateBadges( `${ data.remaining } places restantes` );
 		} )
 		.catch( () => {
-			countEl.removeAttribute( 'aria-busy' );
-			countEl.textContent = '—';
+			updateBadges( '—' );
 		} );
 }
