@@ -2,13 +2,16 @@ import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig( {
 	testDir: './tests/e2e',
+	reporter: [
+		[ 'line' ],
+		[ 'html', { open: 'never' } ],
+	],
 
 	// 1. Initialiser WordPress & activer le plugin Play Seats
 	globalSetup: './tests/e2e/global.setup.js',
 
 	use: {
 		baseURL: 'http://localhost:8889',
-		trace: 'on-first-retry',
 		storageState: 'artifacts/storage-states/admin.json',
 	},
 
