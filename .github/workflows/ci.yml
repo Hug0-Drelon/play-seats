@@ -31,12 +31,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: ./.github/actions/cache-node-modules
-      - run: npm run build
-      - uses: ./.github/actions/cache-wp-env
-        with:
-          wp-env-config: .wp-env.test.json
-          wp-env-cache-key: test
-      - run: npm run env:test:start
-      - run: npm run env:test:composer -- install --no-interaction --prefer-dist
+      - uses: ./.github/actions/wp-env-setup
       - run: npm run test:php
+
+  e2e:
+    name: Playwright
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/wp-env-setup
+      - uses: ./.github/actions/playwright-browsers
+      - run: npm run test:e2e
+      - name: Upload Playwright report
+        uses: actions/upload-artifact@v6
+        if: failure()
+        with:
+          name: playwright-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7

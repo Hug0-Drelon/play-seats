@@ -1,0 +1,21 @@
+name: wp-env setup
+
+description: Install Node dependencies, build assets, and start the test wp-env.
+
+runs:
+  using: composite
+
+  steps:
+    - uses: ./.github/actions/cache-node-modules
+
+    - name: Build plugin assets
+      run: npm run build
+      shell: bash
+
+    - name: Start test wp-env
+      run: npm run env:test:start
+      shell: bash
+
+    - name: Install PHP dependencies in wp-env
+      run: npm run env:test:composer -- install --no-interaction --prefer-dist
+      shell: bash

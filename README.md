@@ -37,11 +37,11 @@ The development site is available at [http://localhost:8888](http://localhost:88
 | `npm run lint:js` | ESLint |
 | `npm run lint:php` | PHPCS and PHPStan (requires a running environment) |
 | `npm run test:php` | PHPUnit integration tests (requires a running environment) |
-| `npm run test:e2e` | Playwright (local / demo; not run in CI) |
+| `npm run test:e2e` | Playwright |
 
 ## Continuous integration
 
-GitHub Actions runs ESLint, PHPCS, PHPStan, and PHPUnit on every push and pull request. The browser test remains a local demonstration command.
+GitHub Actions runs ESLint, PHPCS, PHPStan, PHPUnit, and Playwright on every push and pull request. PHPUnit and E2E run in parallel and share the `node_modules` cache populated by the ESLint job.
 
 ## License
 
