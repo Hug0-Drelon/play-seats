@@ -12,6 +12,7 @@ export default defineConfig( {
 
 	use: {
 		baseURL: 'http://localhost:8889',
+		trace: 'retain-on-failure',
 		storageState: 'artifacts/storage-states/admin.json',
 	},
 
