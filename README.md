@@ -43,6 +43,15 @@ The development site is available at [http://localhost:8888](http://localhost:88
 
 GitHub Actions runs ESLint, PHPCS, PHPStan, PHPUnit, and Playwright on every push and pull request. PHPUnit and E2E run in parallel and share the `node_modules` cache populated by the ESLint job.
 
+## Ressources
+
+- [Playwright documentation](https://playwright.dev/docs/intro)
+- [@wordpress/e2e-test-utils-playwright](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-e2e-test-utils-playwright/) Gutenberg E2E test utilities
+- [WordPress Core migration to Playwright](https://make.wordpress.org/core/2023/10/16/wordpress-core-is-now-using-playwright-for-all-browser-based-tests/)
+- [@wordpress/env](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/) reproducible local WordPress environment
+- [The practical test pyramid](https://martinfowler.com/articles/practical-test-pyramid.html#End-to-endTests) Martin Fowler on end-to-end tests
+- [Polylang E2E test suite](https://github.com/polylang/polylang/tree/master/tests/e2e) real-world Playwright example
+
 ## License
 
 MIT
